@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viajes</title>
+  <style>
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faders = document.querySelectorAll('.fade-in');
+
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add('show');
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="bg-gray-900 py-4 text-white">
+    <div class="container mx-auto flex items-center justify-between px-4 md:px-6">
+      <div>
+        <a class="flex items-center" href="#">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+            </svg>
+            <span class="ml-2 text-lg font-bold">Mundo viajero</span>
+          </div>
+        </a>
+      </div>
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="hidden space-x-4 md:flex">
+        <a class="hover:underline" href="#">
+          Inicio
+        </a>
+        <a class="hover:underline" href="#">
+          Destinos
+        </a>
+        <a class="hover:underline" href="#">
+          Ofertas
+        </a>
+        <a class="hover:underline" href="#">
+          Guías
+        </a>
+        <a class="hover:underline" href="#">
+          Contacto
+        </a>
+      </nav>
+      <div class="hidden md:flex items-center space-x-4">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">
+          Iniciar Sesión
+        </button>
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3">
+          Registrarse
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="relative h-[600px] w-full overflow-hidden">
+    <img src="./images/3a078c37e28285085edec49710e84de2.jpg" alt="Destino de Viaje"
+      class="h-full w-full object-cover object-center" width="1920" height="1080"
+      style="aspect-ratio: 1920 / 1080; object-fit: cover;" />
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="text-4xl font-bold text-white sm:text-5xl md:text-6xl">Descubre el Mundo</h1>
+      <p class="mt-4 text-lg text-gray-200 sm:text-xl md:text-2xl">
+        Encuentra tu próxima aventura con nuestras herramientas de planificación de viajes.
+      </p>
+      <div class="mt-8">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">
+          Reservar Ahora
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gray-100 py-12 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="mx-auto max-w-3xl">
+        <form class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="destination">
+                Destino
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="destination" placeholder="¿A dónde vas?" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="dates">
+                Fechas
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="dates" type="date" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="travelers">
+                Viajeros
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="travelers" min="1" type="number" value="2" />
+            </div>
+          </div>
+          <div class="mt-6">
+            <button
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">
+              Buscar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Destinos Populares</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 fade-in opacity-0">
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/turismo-paris.jpg" alt="Destino 1" class="h-48 w-full rounded-t-lg object-cover"
+            width="400" height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">París, Francia</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Explora la Ciudad de las Luces y sus emblemáticos
+              monumentos.</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/bali-que-hacer-Templo-Ulun-Danu.jpg" alt="Destino 2"
+            class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
+            style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bali, Indonesia</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">
+              Relájate en las hermosas playas y explora los exuberantes paisajes.
+            </p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/New-York.jpg" alt="Destino 3" class="h-48 w-full rounded-t-lg object-cover" width="400"
+            height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Nueva York, EE.UU.</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Vive la energía de la Gran Manzana y sus famosos lugares de
+              interés.</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/Captura-de-Pantalla-2021-07-29-a-las-16.20.48-1024x682.png" alt="Destino 4"
+            class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
+            style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Tokio, Japón</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Sumérgete en la vibrante cultura y tecnología de Tokio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-12 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Experiencias Destacadas</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 fade-in opacity-0">
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/kitchen.jpg" alt="Experiencia 1" class="h-48 w-full rounded-t-lg object-cover" width="400"
+            height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Clase de Cocina en Roma</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Aprende los secretos de la auténtica cocina italiana.</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/interlaken-hiking-guide-hikes-near-interlaken-04228.jpg" alt="Experiencia 2"
+            class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
+            style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Senderismo en los Alpes Suizos</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Explora los impresionantes paisajes montañosos.</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img
+            src="./images/hot-air-balloons-festival-cappadocia-turkey-HOTAIR0605-6d61318b9ac0462d9d20f387e5c7d1a9.jpg"
+            alt="Experiencia 3" class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
+            style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Paseo en Globo Aerostático en Capadocia</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Surca los cielos sobre formaciones geológicas únicas.</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
+          <img src="./images/2022_TNQ_QuicksilverProDiveCairns_DivingSnorkelling_TheEditSuite_153671.jpg"
+            alt="Experiencia 4" class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
+            style="aspect-ratio: 400 / 300; object-fit: cover;" />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Esnórquel en la Gran Barrera de Coral</h3>
+            <p class="mt-2 text-gray-500 dark:text-gray-400">Descubre la vibrante vida marina bajo las olas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gray-100 py-12 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Testimonios</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 fade-in opacity-0">
+        <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
+          <div class="flex items-center">
+            <img src="./images/download.jpg" alt="Avatar 1" class="h-12 w-12 rounded-full object-cover" width="48"
+              height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Juan Pérez</h4>
+              <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            "Tuve una experiencia increíble reservando mi viaje a través de esta plataforma. El proceso fue fluido y el
+            servicio al cliente fue de primera categoría."
+          </p>
+        </div>
+        <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
+          <div class="flex items-center">
+            <img src="./images/images.jpg" alt="Avatar 2" class="h-12 w-12 rounded-full object-cover" width="48"
+              height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Ana Martínez</h4>
+              <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            "Dudaba en reservar mi viaje en línea, pero esta plataforma lo hizo tan fácil y conveniente. Definitivamente
+            la usaría de nuevo."
+          </p>
+        </div>
+        <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
+          <div class="flex items-center">
+            <img src="./images/speaker-3.jpg" alt="Avatar 3" class="h-12 w-12 rounded-full object-cover" width="48"
+              height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
+            <div class="ml-4">
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Miguel Hernández</h4>
+              <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            "Me impresionó la variedad de opciones de viaje y los precios competitivos."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gray-100 py-12 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Contáctanos</h2>
+        <form class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="name">
+                Nombre
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="name" placeholder="Introduce tu nombre" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email">
+                Correo Electrónico
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="email" placeholder="Introduce tu correo electrónico" type="email" />
+            </div>
+          </div>
+          <div class="mt-6 space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="message">
+              Mensaje
+            </label>
+            <textarea
+              class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[150px]"
+              id="message" placeholder="Introduce tu mensaje"></textarea>
+          </div>
+          <div class="mt-6 space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="file">
+              Adjuntar archivo
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
+              id="file" placeholder="Añada una postal" type="file" accept="image/*" />
+          </div>
+          <div class="mt-6">
+            <button
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 py-12 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+        <div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+            </svg>
+            <span class="ml-2 text-lg font-bold">Mundo viajero</span>
+          </div>
+          <p class="mt-4 text-gray-400">© 2024 Mundo viajero. Todos los derechos reservados.</p>
+        </div>
+        <div>
+          <h4 class="mb-4 text-lg font-bold">Legal</h4>
+          <nav class="space-y-2">
+            <a class="hover:underline block" href="#">
+              Política de Privacidad
+            </a>
+            <a class="hover:underline block" href="#">
+              Términos del Servicio
+            </a>
+            <a class="hover:underline block" href="#">
+              Política de Reembolso
+            </a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="mb-4 text-lg font-bold">Recursos</h4>
+          <nav class="space-y-2">
+            <a class="hover:underline block" href="#">
+              Blog
+            </a>
+            <a class="hover:underline block" href="#">
+              Guías
+            </a>
+            <a class="hover:underline block" href="#">
+              Preguntas Frecuentes
+            </a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="mb-4 text-lg font-bold">Sobre Nosotros</h4>
+          <nav class="space-y-2">
+            <a class="hover:underline block" href="#">
+              Nuestra Historia
+            </a>
+            <a class="hover:underline block" href="#">
+              Equipo
+            </a>
+            <a class="hover:underline block" href="#">
+              Carreras
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
