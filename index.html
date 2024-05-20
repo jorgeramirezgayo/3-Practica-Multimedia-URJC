@@ -5,8 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viajes</title>
+  <meta name="description"
+    content="Descubre el Mundo. Encuentra tu próxima aventura con nuestras herramientas de planificación de viajes.">
+  <title>Mundo Viajero</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.svg">
   <style>
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
     .opacity-0 {
       opacity: 0;
     }
@@ -103,13 +113,13 @@
     </div>
   </header>
   <section class="relative h-[600px] w-full overflow-hidden">
-    <img src="./images/3a078c37e28285085edec49710e84de2.jpg" alt="Destino de Viaje"
+    <img src="./images/3a078c37e28285085edec49710e84de2.webp" alt="Destino de Viaje"
       class="h-full w-full object-cover object-center" width="1920" height="1080"
       style="aspect-ratio: 1920 / 1080; object-fit: cover;" />
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
-    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center fade-in opacity-0">
       <h1 class="text-4xl font-bold text-white sm:text-5xl md:text-6xl">Descubre el Mundo</h1>
-      <p class="mt-4 text-lg text-gray-200 sm:text-xl md:text-2xl">
+      <p class="mt-4 text-lg text-white sm:text-xl md:text-2xl" style="text-shadow: 0em 0em 0.5em rgb(0 0 0);">
         Encuentra tu próxima aventura con nuestras herramientas de planificación de viajes.
       </p>
       <div class="mt-8">
@@ -155,8 +165,7 @@
           </div>
           <div class="mt-6">
             <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">
-              Buscar
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-gray-100 hover:bg-gray-300 h-9 rounded-md px-3 text-black">Buscar
             </button>
           </div>
         </form>
@@ -168,7 +177,7 @@
       <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Destinos Populares</h2>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 fade-in opacity-0">
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/turismo-paris.jpg" alt="Destino 1" class="h-48 w-full rounded-t-lg object-cover"
+          <img src="./images/turismo-paris.webp" alt="Destino 1" class="h-48 w-full rounded-t-lg object-cover"
             width="400" height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white">París, Francia</h3>
@@ -177,7 +186,7 @@
           </div>
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/bali-que-hacer-Templo-Ulun-Danu.jpg" alt="Destino 2"
+          <img src="./images/bali-que-hacer-Templo-Ulun-Danu.webp" alt="Destino 2"
             class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
             style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
@@ -188,7 +197,7 @@
           </div>
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/New-York.jpg" alt="Destino 3" class="h-48 w-full rounded-t-lg object-cover" width="400"
+          <img src="./images/New-York.webp" alt="Destino 3" class="h-48 w-full rounded-t-lg object-cover" width="400"
             height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Nueva York, EE.UU.</h3>
@@ -197,7 +206,7 @@
           </div>
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/Captura-de-Pantalla-2021-07-29-a-las-16.20.48-1024x682.png" alt="Destino 4"
+          <img src="./images/Captura-de-Pantalla-2021-07-29-a-las-16.20.48-1024x682.webp" alt="Destino 4"
             class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
             style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
@@ -214,7 +223,7 @@
       <h2 class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Experiencias Destacadas</h2>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 fade-in opacity-0">
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/kitchen.jpg" alt="Experiencia 1" class="h-48 w-full rounded-t-lg object-cover" width="400"
+          <img src="./images/kitchen.webp" alt="Experiencia 1" class="h-48 w-full rounded-t-lg object-cover" width="400"
             height="300" style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Clase de Cocina en Roma</h3>
@@ -222,7 +231,7 @@
           </div>
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/interlaken-hiking-guide-hikes-near-interlaken-04228.jpg" alt="Experiencia 2"
+          <img src="./images/interlaken-hiking-guide-hikes-near-interlaken-04228.webp" alt="Experiencia 2"
             class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
             style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
@@ -232,7 +241,7 @@
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
           <img
-            src="./images/hot-air-balloons-festival-cappadocia-turkey-HOTAIR0605-6d61318b9ac0462d9d20f387e5c7d1a9.jpg"
+            src="./images/hot-air-balloons-festival-cappadocia-turkey-HOTAIR0605-6d61318b9ac0462d9d20f387e5c7d1a9.webp"
             alt="Experiencia 3" class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
             style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
@@ -241,7 +250,7 @@
           </div>
         </div>
         <div class="rounded-lg bg-white shadow-md dark:bg-gray-900 dark:shadow-none">
-          <img src="./images/2022_TNQ_QuicksilverProDiveCairns_DivingSnorkelling_TheEditSuite_153671.jpg"
+          <img src="./images/2022_TNQ_QuicksilverProDiveCairns_DivingSnorkelling_TheEditSuite_153671.webp"
             alt="Experiencia 4" class="h-48 w-full rounded-t-lg object-cover" width="400" height="300"
             style="aspect-ratio: 400 / 300; object-fit: cover;" />
           <div class="p-4">
@@ -258,10 +267,10 @@
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 fade-in opacity-0">
         <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
           <div class="flex items-center">
-            <img src="./images/download.jpg" alt="Avatar 1" class="h-12 w-12 rounded-full object-cover" width="48"
+            <img src="./images/download.webp" alt="Avatar 1" class="h-12 w-12 rounded-full object-cover" width="48"
               height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
             <div class="ml-4">
-              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Juan Pérez</h4>
+              <p class="text-lg font-bold text-gray-900 dark:text-white">Juan Pérez</p>
               <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
             </div>
           </div>
@@ -272,10 +281,10 @@
         </div>
         <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
           <div class="flex items-center">
-            <img src="./images/images.jpg" alt="Avatar 2" class="h-12 w-12 rounded-full object-cover" width="48"
+            <img src="./images/images.webp" alt="Avatar 2" class="h-12 w-12 rounded-full object-cover" width="48"
               height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
             <div class="ml-4">
-              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Ana Martínez</h4>
+              <p class="text-lg font-bold text-gray-900 dark:text-white">Ana Martínez</p>
               <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
             </div>
           </div>
@@ -286,10 +295,10 @@
         </div>
         <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-900 dark:shadow-none">
           <div class="flex items-center">
-            <img src="./images/speaker-3.jpg" alt="Avatar 3" class="h-12 w-12 rounded-full object-cover" width="48"
+            <img src="./images/speaker-3.webp" alt="Avatar 3" class="h-12 w-12 rounded-full object-cover" width="48"
               height="48" style="aspect-ratio: 48 / 48; object-fit: cover;" />
             <div class="ml-4">
-              <h4 class="text-lg font-bold text-gray-900 dark:text-white">Miguel Hernández</h4>
+              <p class="text-lg font-bold text-gray-900 dark:text-white">Miguel Hernández</p>
               <p class="text-gray-500 dark:text-gray-400">Cliente Satisfecho</p>
             </div>
           </div>
@@ -341,7 +350,7 @@
             </label>
             <input
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
-              id="file" placeholder="Añada una postal" type="file" accept="image/*" />
+              id="file" type="file" accept="image/*" />
           </div>
           <div class="mt-6">
             <button
@@ -368,7 +377,7 @@
           <p class="mt-4 text-gray-400">© 2024 Mundo viajero. Todos los derechos reservados.</p>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-bold">Legal</h4>
+          <p class="mb-4 text-lg font-bold">Legal</p>
           <nav class="space-y-2">
             <a class="hover:underline block" href="#">
               Política de Privacidad
@@ -382,7 +391,7 @@
           </nav>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-bold">Recursos</h4>
+          <p class="mb-4 text-lg font-bold">Recursos</p>
           <nav class="space-y-2">
             <a class="hover:underline block" href="#">
               Blog
@@ -396,7 +405,7 @@
           </nav>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-bold">Sobre Nosotros</h4>
+          <p class="mb-4 text-lg font-bold">Sobre Nosotros</p>
           <nav class="space-y-2">
             <a class="hover:underline block" href="#">
               Nuestra Historia
